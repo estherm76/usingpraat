@@ -271,7 +271,7 @@ In addition, you can click and drag (or use the *Select* menu) to select portion
 
 To play a sound in the editor window, use the three gray bars at the bottom of the editor window.  The bottom-most bar (*Total Duration*) will play the entire sound.  The middle bar (*Visible Part*) will play only the visible portion of the sound.  The different sections of the top bar (split by the cursor or selection), when clicked, will play the corresponding pieces of the visible portions of the sound file.  Hitting <tab> also plays the visible portion of the file.
 
-Obviously, to view some analyses and to get a closer look at your data, you’ll need to use the five buttons in the bottom left corner of the window.  As you can imagine, ***all*** shows the entire file, ***in*** and ***out*** zoom in and out, ***sel*** zooms to make the current selection fill the window, and ***bak*** zooms back to the previous zoom level.  For longer sound files, in order to view analyses like the spectrogram and formants, you’ll need to zoom in to show only a pre-defined amount of time.\footnote{This amount of time can be changed in \textit{Editor -> Analyses -> Show Analyses -> Longest analysis}.  20 seconds is a sane value for most modern computers, much higher will cause your system to lag when viewing files.}
+Obviously, to view some analyses and to get a closer look at your data, you’ll need to use the five buttons in the bottom left corner of the window.  As you can imagine, ***all*** shows the entire file, ***in*** and ***out*** zoom in and out, ***sel*** zooms to make the current selection fill the window, and ***bak*** zooms back to the previous zoom level.  For longer sound files, in order to view analyses like the spectrogram and formants, you’ll need to zoom in to show only a pre-defined amount of time.\footnote{This amount of time can be changed in \textit{Editor -> Analyses -> Show Analyses -> Longest analysis.}.  20 seconds is a sane value for most modern computers, much higher will cause your system to lag when viewing files.}
 
 The ***Group*** setting in the bottom right corner of the window will ensure that if two sounds are open in two Editor windows at once, they'll share the same zoom characteristics.  This is best used to compare two versions of the same file, say, an original versus one with an acoustic modification made.
 
@@ -369,7 +369,7 @@ The surest way to get an accurate F0 for a single cycle is to open the file in t
 
 1. Zoom in to the point where you can see individual cycles in the sound file
 2. Select one complete cycle, as accurately as possible, thus, giving Praat the period in seconds (t)
-3. Praat will calculate the frequency of the sound in Hertz in the top bar, giving it in the format ( ___/ s).  Use the zoom *sel* button to zoom in if you can’t see the frequency readout.\footnote{This is going to be an accurate number (so long as you gave an accurate period), but you’re welcome to calculate it yourself to make sure.  f = $\frac{1}{t}$, where *t* is the period in seconds}
+3. Praat will calculate the frequency of the sound in Hertz in the top bar, giving it in the format ( ___/ s).  Use the zoom *sel* button to zoom in if you can’t see the frequency readout.\footnote{This is going to be an accurate number (so long as you gave an accurate period), but you’re welcome to calculate it yourself to make sure.  f = $\frac{1}{t}$, where *t* is the period in seconds.}
 
 ### Viewing Pitch via a narrowband spectrogram
 
@@ -608,18 +608,18 @@ This can be done even more easily and efficiently by script, allowing you to fin
 ## Measuring Creakiness and Breathiness using Spectral Tilt
 \label{creakybreathy}
 
-**Spectral tilt** is often used in phonetic research as a measure of creak.  As discussed in Gordon and Ladefoged 2001 \cite{Gordon:2001um}:
+**Spectral tilt** is often used in phonetic research as a measure of creak.  As discussed in \cite{Gordon:2001um}:
 
 > One of the major acoustic parameters that reliably differentiates phonation types in many languages is spectral tilt, i.e., the degree to which intensity drops off as frequency increases. Spectral tilt can be quantified by comparing the amplitude of the fundamental to that of higher frequency harmonics, e.g., the second harmonic, the harmonic closest to the first formant, or the harmonic closest to the second formant. Spectral tilt is characteristically most steeply positive for creaky vowels and most steeply negative for breathy vowels.
 
 Spectral tilt is easily measured by finding H1 and H2, measuring their amplitudes as described above, and comparing the two numbers.
 
-**However**, H1-H2 is subject to very strong interference from nasality, as described in A.P. Simpson's sternly named paper *The first and second harmonics should not be used to measure breathiness in male and female voices.* \cite{simpson2012first}, and investigators of these phenomena would do well to read that paper, and focus on other measures like Harmonics-to-Noise ratio (see Section \ref{pulsesjittershimmerhnr}). 
+**However**, H1-H2 is subject to very strong interference from nasality, as described in A.P. Simpson's sternly named paper *The first and second harmonics should not be used to measure breathiness in male and female voices* (\citeyear{simpson2012first}), and investigators of these phenomena would do well to read that paper, and focus on other measures like Harmonics-to-Noise ratio (see Section \ref{pulsesjittershimmerhnr}). 
 
 ## Measuring Nasality using A1-P0
 \label{a1p0}
 
-**A1-P0** is an acoustical measure of nasality first described by Marilyn Chen in *Acoustic correlates of English and French nasalized vowels* (\cite{Chen:1997vr}), and later discussed in Styler 2017 (\cite{Styler:2017}).  Like spectral tilt, it's a ratio measure of the amplitudes of two harmonics: A1, which is the highest harmonic peak near the first formant, and P0, which is a low frequency harmonic (usually H1 or H2) which corresponds to a low resonance in the nasal passages.  See Figure \ref{chennasalnon} for an illustration of these peaks in spectra.  To compute A1-P0, you need to take three main steps\footnote{Many thanks to Dr. Rebecca Scarborough, on whose handout “Measuring Nasality (using A1-P0)” this section is loosely based}
+**A1-P0** is an acoustical measure of nasality first described by Marilyn Chen in *Acoustic correlates of English and French nasalized vowels* (\citeyear{Chen:1997vr}), and later discussed in \cite{Styler:2017}.  Like spectral tilt, it's a ratio measure of the amplitudes of two harmonics: A1, which is the highest harmonic peak near the first formant, and P0, which is a low frequency harmonic (usually H1 or H2) which corresponds to a low resonance in the nasal passages.  See Figure \ref{chennasalnon} for an illustration of these peaks in spectra.  To compute A1-P0, you need to take three main steps\footnote{Many thanks to Dr. Rebecca Scarborough, on whose handout “Measuring Nasality (using A1-P0)” this section is loosely based.}
 
 1. Find A1 and measure its amplitude
 	* A1 is the highest harmonic near the frequency of the first formant.
@@ -640,7 +640,7 @@ Spectral tilt is easily measured by finding H1 and H2, measuring their amplitude
   \centerline{
     \mbox{\includegraphics[width=5.0in]{chennasalnon.png}}
   }
-  \caption{Figure 2 from Chen 1997 (\cite{Chen:1997vr}), showing A1 and P0 in oral vs. nasal vowels \label{chennasalnon}}
+  \caption{Figure 2 from \cite{Chen:1997vr}, showing A1 and P0 in oral vs. nasal vowels \label{chennasalnon}}
 
   \end{figure}
 
@@ -677,7 +677,7 @@ To measure spectral COG in Praat:
 
 An info window will then pop up, presenting you with the spectral COG for the point represented by the spectrum.  
 
-For further information about Spectral Center of Gravity and an example of its use in fricative description and cross-linguistic comparison (showing the relationship between articulation and spectral COG), refer to Gordon et al 2002 *A cross-linguistic acoustic study of voiceless fricatives*.  \cite{Gordon:2002vv}.\footnote{Paul Boersma has stated in correspondence that this paper incorrectly implements Spectral COG, leading to inconsistent results, and thus, should not be emulated.  For more information, see Boersma \& Hamann 2008 (from http://www.fon.hum.uva.nl/paul/papers/BoersmaHamannPhonology2008.pdf), Footnote 7}.
+For further information about Spectral Center of Gravity and an example of its use in fricative description and cross-linguistic comparison (showing the relationship between articulation and spectral COG), refer to *A cross-linguistic acoustic study of voiceless fricatives*  \citep{Gordon:2002vv}.\footnote{Paul Boersma has stated in correspondence that this paper incorrectly implements Spectral COG, leading to inconsistent results, and thus, should not be emulated.  For more information, see Boersma \& Hamann 2008 (from \url{http://www.fon.hum.uva.nl/paul/papers/BoersmaHamannPhonology2008.pdf}), Footnote 7.}.
 
 # Creating and manipulating sound Files in Praat
 
@@ -750,7 +750,7 @@ Sometimes, you might want to create (or re-create) a stereo sound from two compo
 
 Note that Praat will allow you to combine two signals of unequal length to stereo.  In this case, the files will be aligned at the start time.  But this means that a subtle change in duration (an extra few ms of pasted pause early in the file) could result in a very unpleasant desynchronization, which will happen without warning or notification.
 
-Chaining this "Combine to Stereo" process with a "Convert to mono" step is one (somewhat roundabout) method of combining two sound files into one signal.  See Section \label{sub:formulas} for a much more graceful approach to doing the same thing.
+Chaining this "Combine to Stereo" process with a "Convert to mono" step is one (somewhat roundabout) method of combining two sound files into one signal.  See Section \ref{sub:formulas} for a much more graceful approach to doing the same thing.
 
 ## Cropping, Copying, Splicing and Pasting
 \label{sec:cropcopy}
@@ -1033,7 +1033,7 @@ To concatenate Sound A and Sound B into one file, with Sound A first:
 \end{tabular}
 \vspace{0.5cm}
 
-Note that you also have the option to use *Objects -> Combine -> Concatenate recoverably*, which works identically to *Concatenate*, but also creates a 'TextGrid chain' annotation showing the extent of each file within the chain file, which can be useful to later split the files back up.  *Objects -> Combine -> Concatenate with overlap...* performs the concatenation, specifying that the last N seconds of the first file should overlap the first N seconds of the second (which can be useful if, for instance, both words have 50ms of silence, but you want a 25ms inter-stimulus interval).  But if you're attempting to combine the sounds, you should instead refer to...
+Note that you also have the option to use *Objects -> Combine -> Concatenate recoverably*, which works identically to *Concatenate*, but also creates a 'TextGrid chain' annotation showing the extent of each file within the chain file, which can be useful to later split the files back up.  *Objects -> Combine -> Concatenate with overlap...* performs the concatenation, specifying that the last N seconds of the first file should overlap the first N seconds of the second (which can be useful if, for instance, both words have 50ms of silence, but you want a 25ms inter-stimulus interval).  But if you're attempting to combine the sounds, you should instead refer to Section \ref{sub:combining}.
 
 ### Concatenating 'LongSound' files
 
@@ -1052,7 +1052,7 @@ When you read in a file as a LongSound, you lose access to the above method. Ins
 There is a 'Concatenate' button when you've selected two LongSounds, but it just tells you to do the above.
 
 ## Combining Sounds
-\label{s}
+\label{sub:combining}
 
 There are two ways to combine two sounds using Praat.  The first will sometimes work well, and works best when both sounds are to be added equally and have the exact same file length:
 
