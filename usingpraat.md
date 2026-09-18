@@ -118,9 +118,9 @@ All screenshots here are from Praat 5.3.60 running on Mac OS X, but your copy on
 
 Although this guide aims to be painfully comprehensive, there are many other resources available for helping with Praat.  The first step for dealing with any issue is Praat’s built in help guide, accessible from the upper right corner of most windows in the program.  You’ll be best served by starting with “Intro” and moving from there.
 
-There are also a variety of tutorials for Praat available online, and the Yahoo! Groups “Praat-users” group, whose archives can be searched at the below link:
+There are also a variety of tutorials for Praat available online, and the Groups.io “Praat-Users-List” group, found at the below link:
 
-\url{http://uk.groups.yahoo.com/group/praat-users/}
+\url{https://groups.io/g/Praat-Users-List}
 
 You will want to search the archives before posting, as there are likely a great many people who have had your question before in the history of the software.
 
@@ -308,7 +308,7 @@ The most important settings here are the **window length** and **view range**.
 
 View range controls how much of the spectrum is visible.  For speech, you'll likely be interested in the range from 0 to 5000 or 6000 Hz, but if you're examining fricatives, you might want to look as high as 15,000 Hz.  If you're looking at music, you may focus on the area from 100 to 2000 Hz.  Either way, this is how you set which part of the spectrum you care about.
 
-If your sound files have a relatively small or large **dynamic range** (the difference in volume between the loudest and quietest frequencies or times), or if your spectrograms seems too light or too dark, you may want to adjust the dynamic range setting, but 50 dB is usually fine for most purposes\footnote{Like so many things, the key to understanding the usefulness of these settings is sitting down and playing around with them a bit.  "Fiddling around with settings" is one of the best things a novice Praat user can do with 20 minutes}.  
+If your sound files have a relatively small or large **dynamic range** (the difference in volume between the loudest and quietest frequencies or times), or if your spectrograms seems too light or too dark, you may want to adjust the dynamic range setting, but 50 dB is usually fine for most purposes\footnote{Like so many things, the key to understanding the usefulness of these settings is sitting down and playing around with them a bit.  "Fiddling around with settings" is one of the best things a novice Praat user can do with 20 minutes.}.  
 
 Window length (given in seconds) controls how large of a chunk of the sound Praat will examine when trying to find the frequencies present at a given moment in the signal.  
 
@@ -346,9 +346,9 @@ If you'd like the duration *of an entire file*, just select the file in the Obje
 
 ### Measuring Voice Onset Time (VOT)
 
-"Voice Onset Time" (VOT) is the time between when the stop is released and when the voicing of the following vowel begins.  Measuring this time, which can be positive (say, for the English voiceless aspirated stop FIXMEta), around zero (for the English "voiced" stop /d/, or, more commonly, the voiceless unaspirated [ta] around the the world), or negative (for fully voiced stops, where voicing starts before the stop is released, as found in most non-English languages).  Many languages classify their stops largely based on Voice Onset Time, and it's often an excellent, more gradient empirical measure of the "voiced/voiceless" phonological distinction. 
+"Voice Onset Time" (VOT) is the time between when the stop is released and when the voicing of the following vowel begins.  This time can be positive (say, for the English voiceless aspirated stop [tʰa]), around zero (for the English "voiced" stop /d/, or, more commonly, the voiceless unaspirated [ta] around the the world), or negative (for fully voiced stops, where voicing starts before the stop is released, as found in most non-English languages).  Many languages classify their stops largely based on Voice Onset Time, and it's often an excellent, more gradient empirical measure of the "voiced/voiceless" phonological distinction. 
 
-Measuring Voice Onset Time (VOT) is very easy to do in Praat, as it's just a duration measurement between two set points, the release of the stop and the start of voicing.
+Measuring VOT is very easy to do in Praat, as it's just a duration measurement between two set points, the release of the stop and the start of voicing.
 
 1. Find the stop release
 2. Find the start of voicing
@@ -491,7 +491,7 @@ To apply any of these changes, you'll want to open the Formant Settings window (
  
 Finding formants is a tricky thing.  When you set out looking for areas of the spectrum where there's a bit of extra energy, you *will* find them, so the problem isn't finding peaks, but finding *the correct peaks*.  To help in this task, Praat has settings dictating how many formants it will find, and how spread out those formants will be.  
 
-We typically will assume that speakers will have one formant per 1000 Hz, and thus, that there will be 5 formants in the 5000 Hz we usually worry about for speech research.  Thus, "5" is the default setting for *Number of Formants*, and the highest we'll look for formants (the *Maximum Formant*) is 5000 Hz by default.
+We typically will assume that speakers will have one formant per 1000 Hz, and thus, that there will be 5 formants in the 5000 Hz (or 5500 Hz for female voices) we usually worry about for speech research.  Thus, "5" is the default setting for *Number of Formants*, and the highest we'll look for formants (the *Maximum Formant*) is 5500 Hz by default.
   
 Usually, you'll only need to adjust the *Number of Formants*.  Although 5 formants is a good baseline, if Praat is finding formants where there are none (latching onto a small bump between two actual formants, usually), you should lower this value down to 4 or 3.  If Praat is finding too few formants (missing F2 and labeling F3 as F2, for instance), you'll want to raise this number up to 6.  
   
@@ -529,7 +529,7 @@ To get the overall intensity of a sound, select the desired sound and run *Objec
 
 By default, Praat's display of the intensity of a word is smoothed to avoid showing individual pulses in the amplitude lines, both in the editor window and in amplitude objects (when drawn or viewed).  This smoothing is based on the minimum F0 of the sound.
 
-If you want to see something closer the amplitude envelope of the sound in Praat (where pulses show up individually as amplitude peaks), or if you want the amplitude curve to be smoother than it normally would be, you must simply adjust the minimum pitch expected by Praat.  This can be done in *Editor -> Pitch -> Pitch Settings...*, as described more fully in Section \ref{pitchtracking}.  Similar smoothing/desmoothing can be accomplished when creating Intensity objects by altering the minimum pitch value in the *Objects -> To Intensity...* dialog box.
+If you want to see something closer to the amplitude envelope of the sound in Praat (where pulses show up individually as amplitude peaks), or if you want the amplitude curve to be smoother than it normally would be, you must simply adjust the minimum pitch expected by Praat.  This can be done in *Editor -> Pitch -> Pitch Settings...*, as described more fully in Section \ref{pitchtracking}.  Similar smoothing/desmoothing can be accomplished when creating Intensity objects by altering the minimum pitch value in the *Objects -> To Intensity...* dialog box.
 
 This decrease in amplitude smoothing is particularly useful for measuring or counting quick, amplitude-based phenomena like taps and flaps.
 
@@ -622,7 +622,7 @@ Spectral tilt is easily measured by finding H1 and H2, measuring their amplitude
 **A1-P0** is an acoustical measure of nasality first described by Marilyn Chen in *Acoustic correlates of English and French nasalized vowels* (\cite{Chen:1997vr}), and later discussed in Styler 2017 (\cite{Styler:2017}).  Like spectral tilt, it's a ratio measure of the amplitudes of two harmonics: A1, which is the highest harmonic peak near the first formant, and P0, which is a low frequency harmonic (usually H1 or H2) which corresponds to a low resonance in the nasal passages.  See Figure \ref{chennasalnon} for an illustration of these peaks in spectra.  To compute A1-P0, you need to take three main steps\footnote{Many thanks to Dr. Rebecca Scarborough, on whose handout “Measuring Nasality (using A1-P0)” this section is loosely based}
 
 1. Find A1 and measure its amplitude
-2. A1 is the highest harmonic near the frequency of the first formant.
+	* A1 is the highest harmonic near the frequency of the first formant.
 	* F1 can be located as described in Section \ref{sub:measuringformants}
 	* The frequency of F1 will vary from vowel to vowel, tending to be lower for high vowels and higher for low vowels.  The amplitude of A1, though, will not vary by vowel quality
 
@@ -654,7 +654,7 @@ Because the nasal peak (P0) will be reinforced by the resonances in the nose dur
 
 4. Remember, here you’re relying on Praat to give an accurate measurement of the first formant, as well as F0.  Feel free to tweak the formant settings, and don’t blindly trust Praat’s formant tracker to find what linguists call the first formant and not some other spectral prominence.
 
-This is a complex measure, and I (personally) have spent a great deal of time working with it and its measurements\footnote{For more on nasality, please see the description of my dissertation work, \cite{Styler:2015aa} and \cite{Styler:2017}, posted at \url{http://savethevowels.org/will/publications.html}. I did not write 84 pages worth of Praat manual only to shy away from a completely self-serving and shameless plug in the sole earthly context in which nasality research is actually relevant.}. 
+This is a complex measure, and I (personally) have spent a great deal of time working with it and its measurements\footnote{For more on nasality, please see the description of my dissertation work, \cite{Styler:2015aa} and \cite{Styler:2017}, posted at \url{http://savethevowels.org/will/publications.html}. I did not write 88 pages worth of Praat manual only to shy away from a completely self-serving and shameless plug in the sole earthly context in which nasality research is actually relevant.}. 
 
 Although it is among the best acoustical approaches to nasality presently available, it is also remarkably noisy, capricious, and complex.  A1-P0 nasality should be one element of your successful analysis, not the sole element, and as I have discovered, no nasality experiment is simple.  Proceed with caution.
 
@@ -1052,6 +1052,7 @@ When you read in a file as a LongSound, you lose access to the above method. Ins
 There is a 'Concatenate' button when you've selected two LongSounds, but it just tells you to do the above.
 
 ## Combining Sounds
+\label{s}
 
 There are two ways to combine two sounds using Praat.  The first will sometimes work well, and works best when both sounds are to be added equally and have the exact same file length:
 
@@ -1303,12 +1304,12 @@ Once your TextGrid is created, you’ll be presented with the **TextGrid Editor 
 
 5. Click on the tier you’d like to make an interval on
 6. Using your mouse, select the part of the word you’d like the interval to contain
-7. Hit the <Return> key
+7. Hit the Enter key
 8. Click on the interval you’ve just created and name it 
 	* You can use IPA characters in TextGrid labels (provided you have the proper Unicode IPA fonts installed), but when exporting the labels by script or elsewhere, all programs used for analysis must be Unicode aware.  Most modern programs are, but many command-line programs (such as SPSS or Python 2.X) are not natively or straightforwardly happy in Unicode, so if you’re planning to use any non-Unicode aware programs, you’re best served using SAMPA or some other means of transliterating IPA characters into ASCII text.
 
 9. Repeat for other intervals on the same tier, as well as any other tiers
-	* Points are created by clicking on a point tier, placing the cursor where you’d like the point, and hitting <Return>.
+	* Points are created by clicking on a point tier, placing the cursor where you’d like the point, and hitting Enter.
 
 Once your file has been TextGridded as above (looking something like Figure \ref{completedgrid}), you’ll want to save the TextGrid file (either from the Objects window (*Objects -> Save -> Save as Text File...*) or within the TextGrid editor (*TextGrid Editor -> File -> Save TextGrid as Text File...*).  
 
