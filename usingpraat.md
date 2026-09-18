@@ -261,7 +261,7 @@ Once a sound has been recorded or opened, you'll spend much of your time interac
 
   \end{figure}
 
-You're immediately presented with an editor window (like that in Figure \ref{editor}), showing the waveform of the sound, and if the sound is sufficiently short, a broadband spectrogram showing the spectral energy of the sound over time.  In addition, you might also be presented with a series of red dots (representing formants), blue lines (representing the speaker's pitch), and a yellow line (representing intensity).  These can be enabled and disabled in the *Editor -> View -> Show Analyses* menu.  
+You're immediately presented with an editor window (like that in Figure \ref{editor}), showing the waveform of the sound, and if the sound is sufficiently short, a broadband spectrogram showing the spectral energy of the sound over time.  In addition, you might also be presented with a series of red dots (representing formants), blue lines (representing the speaker's pitch), and a yellow line (representing intensity).  These can be enabled and disabled in the *Editor -> Analyses -> Show Analyses* menu.  
 
 If your window is showing two waveforms, then you've opened a stereo sound file.  The spectrogram displayed will show you the two channels combined.  Everything below will remain true, and there's no fear to be had, but particularly if the two channels show two types of vastly different data, the resulting data could be a bit odd, and you might see Sections \ref{sec:stereo} and \ref{sec:stereomanip} for instructions on separating the channels.
 
@@ -271,7 +271,7 @@ In addition, you can click and drag (or use the *Select* menu) to select portion
 
 To play a sound in the editor window, use the three gray bars at the bottom of the editor window.  The bottom-most bar (*Total Duration*) will play the entire sound.  The middle bar (*Visible Part*) will play only the visible portion of the sound.  The different sections of the top bar (split by the cursor or selection), when clicked, will play the corresponding pieces of the visible portions of the sound file.  Hitting <tab> also plays the visible portion of the file.
 
-Obviously, to view some analyses and to get a closer look at your data, you’ll need to use the five buttons in the bottom left corner of the window.  As you can imagine, ***all*** shows the entire file, ***in*** and ***out*** zoom in and out, ***sel*** zooms to make the current selection fill the window, and ***bak*** zooms back to the previous zoom level.  For longer sound files, in order to view analyses like the spectrogram and formants, you’ll need to zoom in to show only a pre-defined amount of time.\footnote{This amount of time can be changed in \textit{Editor -> View -> Show Analyses -> Longest analysis}.  20 seconds is a sane value for most modern computers, much higher will cause your system to lag when viewing files.}
+Obviously, to view some analyses and to get a closer look at your data, you’ll need to use the five buttons in the bottom left corner of the window.  As you can imagine, ***all*** shows the entire file, ***in*** and ***out*** zoom in and out, ***sel*** zooms to make the current selection fill the window, and ***bak*** zooms back to the previous zoom level.  For longer sound files, in order to view analyses like the spectrogram and formants, you’ll need to zoom in to show only a pre-defined amount of time.\footnote{This amount of time can be changed in \textit{Editor -> Analyses -> Show Analyses -> Longest analysis}.  20 seconds is a sane value for most modern computers, much higher will cause your system to lag when viewing files.}
 
 The ***Group*** setting in the bottom right corner of the window will ensure that if two sounds are open in two Editor windows at once, they'll share the same zoom characteristics.  This is best used to compare two versions of the same file, say, an original versus one with an acoustic modification made.
 
@@ -281,7 +281,7 @@ All of the measures discussed in this section will use the Editor window, and yo
 
 Although zooming in and out will get you most of the way there, it's often useful to isolate a section of a sound (usually a single word or vowel) into a different Sound object.  To do this, select a portion of a sound, say, a vowel, and then:
 
-> *Editor -> File -> Extract Selected Sound (time from 0)*
+> *Editor -> Sound -> Extract Selected Sound (time from 0)*
 
 This will create a new sound in the Objects window, containing just the selected part of the original sound.  The *(preserve times)* option (in the same *Editor -> File* menu) just keeps the timecode on the extracted sound the same as in context (so, if the vowel starts at 0.245 s, the extracted sound file will start at 0.245 s).
 
@@ -292,7 +292,7 @@ This can also be done from the objects window using *Objects -> Convert -> Extra
 
 Although the basic 0-5000 Hz broadband spectrogram will suffice for many uses, it's useful to be able to change those settings.  To make changes to the spectrogram settings...
 
-> *Editor -> Spectrum -> Spectrogram Settings*
+> *Editor -> Spectrogram -> Spectrogram Settings*
 
 This will pull up the Spectrogram settings window (like that in Figure \ref{spectrogramsettings})
 
@@ -320,7 +320,7 @@ This choice, of "wide window, good frequency, bad timing" vs. "small window, bad
 \label{subsec:broadnarrow}
 Praat defaults to showing a Broadband spectrogram, which is excellent for viewing the temporal structure of the sound and for seeing vowel formants, but sometimes, you'll want to look at harmonics and F0 instead.  To do this, you'll ask Praat to provide you with a narrowband spectrogram.  To do this:
 
-1. *Editor -> Spectrum -> Spectrogram Settings*
+1. *Editor -> Spectrogram -> Spectrogram Settings*
 2. Set the *Window Length* to 0.025 (or the narrowband window length of your choosing)
 3. Click OK
 
@@ -338,7 +338,7 @@ As you might expect, measuring duration is quite easy.  Once the sound file is o
 
 1. Select the portion of the file you'd like to measure (e.g. the vowel) with the cursor
 2. Read the duration of the selection (in seconds) from the duration bar along the bottom of the Editor window OR
-3. *Editor -> Query -> Get selection length* and read your selection in the info window
+3. *Editor -> Time -> Get length of selection* and read your selection in the info window
 
 If you'd like the duration *of an entire file*, just select the file in the Objects window and:
 
@@ -354,7 +354,7 @@ Measuring Voice Onset Time (VOT) is very easy to do in Praat, as it's just a dur
 2. Find the start of voicing
 3. Select the span between these two points
 4. Read the duration of the selection (in seconds) from the duration bar along the bottom of the Editor window OR
-5. *Editor -> Query -> Get selection length* and read your selection in the info window
+5. *Editor -> Time -> Get length of selection* and read your selection in the info window
 6. If the start of voicing came before the stop release, the VOT is negative.  Otherwise, the VOT is positive.
 
 In general, voiced sounds (in languages other than English) will have a VOT which is negative, voiceless unaspirated sounds will have a VOT which is around 0, and aspirated sounds will have a positive VOT. 
@@ -511,7 +511,7 @@ These settings persist even once you've closed Praat, so if you make adjustments
 
 ### Scripting Only: Formant Objects
 
-When scripting, you may want to create a Formant object (select the sound, then *Objects -> Formants & LPC -> To Formant (burg)...*, specifying the proper settings) so that you don't need to open the editor to measure formants.   Once a formant object is created, you can instead select the Formant object and run any of the commands in the  *Objects -> Query* menu to get information.
+When scripting, you may want to create a Formant object (select the sound, then *Objects -> Analyse spectrum -> To Formant (burg)...*, specifying the proper settings) so that you don't need to open the editor to measure formants.   Once a formant object is created, you can instead select the Formant object and run any of the commands in the  *Objects -> Query* menu to get information.
 
 \vspace{0.5cm}
 \begin{tabular}[c c]{ p{0.7in} p{12cm}}
@@ -580,12 +580,12 @@ Spectral slices are useful for a variety of measures of $F_0$, nasality, creak, 
 \label{sub:gettingaslice}
 To take a spectral slice, you'll need to do the following:
 
-1. *Editor -> Spectrum -> Spectrogram Settings*
+1. *Editor -> Spectrogram -> Spectrogram Settings*
 2. Set *Window Length* to "0.025" (effectively producing a narrow-band spectrogram)
-3. *Editor -> Spectrum -> Advanced Spectrogram Settings*
-4. Set *Window Shape* to "hamming"
+3. *Editor -> Spectrogram -> Advanced Spectrogram Settings*
+4. Set *Window Shape* to "Hamming"
 5. Select the point at which you'd like to see the slice taken
-6. *Editor -> Spectrum -> View Spectral Slice* 
+6. *Editor -> Spectrogram -> View Spectral Slice* 
 
 This will create a new Spectrum object, and pull up a window like that in figure \ref{spectralslice}, showing amplitude on the Y axis, and frequency (from 0 up to the Nyquist frequency) on the X axis.  You can zoom in and out using the buttons in the bottom left corner, as you wish.
 
@@ -762,11 +762,11 @@ However, producing quality splices is not as straightforward as copy and pasting
 To **copy/paste** a portion of the soundfile:
 
 1. Select the portion of your soundfile that you’d like to copy
-2. *Editor -> Select -> Move start of selection to nearest zero crossing* or Cmd + ,
-3. *Editor -> Select -> Move end of selection to nearest zero crossing* or Cmd + .
+2. *Editor -> Sound -> Move start of selection to nearest zero crossing* or Cmd + ,
+3. *Editor -> Sound -> Move end of selection to nearest zero crossing* or Cmd + .
 4. *Editor -> Edit -> Copy* or Cmd + c
 5. Put the cursor where you’d like the portion to go
-6. *Editor -> Select -> Move cursor to nearest zero crossing* or Cmd + 0
+6. *Editor -> Sound -> Move cursor to nearest zero crossing* or Cmd + 0
 7. Paste using *Editor -> Edit -> Paste* or Cmd + p
 
 Following these steps will cleanly insert the snippet into the word.  Given time, you’ll develop muscle memory and find yourself quickly typing “Cmd + , Cmd + . Cmd + c” to copy and “Cmd + 0 Cmd + p” to paste.  Copy-pasting can be done either within the same file, or between two different files in Praat.  
@@ -778,8 +778,8 @@ To delete a portion of a file or to remove silence, you’ll select, again atten
 To **delete** a portion of the soundfile:
 
 1. Select the portion of your soundfile that you’d like to disappear
-2. *Editor -> Select -> Move start of selection to nearest zero crossing* Cmd + ,
-3. *Editor -> Select -> Move end of selection to nearest zero crossing* or Cmd + .
+2. *Editor -> Sound -> Move start of selection to nearest zero crossing* Cmd + ,
+3. *Editor -> Sound -> Move end of selection to nearest zero crossing* or Cmd + .
 4. *Editor -> Edit -> Cut* or Cmd + X
 	
 Unfortunately, Praat doesn’t include an easy way to trim, splice or cut portions of the file from the objects window, meaning that any scripts will have to use GUI scripting (the computer controlling the mouse/selection tool) on the Editor window, telling the Editor what to select, then to cut, etc.  This works well, but is slightly less efficient than is desirable.  Some progress can be made from the Objects window alone by using a combination of  *Objects -> Convert -> Extract Part* and *Objects -> Combine -> Concatenate* to, effectively, create new sounds which resemble a cut or trimmed sound, but this can be quite counterintuitive.
@@ -876,7 +876,7 @@ Praat does allow you to manipulate the speaker’s pitch in already-recorded sou
 To create a manipulation object (which allows you to change a sound’s pitch and duration):
 
 1. Load the sound into the objects window of Praat
-2. *Objects -> To Manipulation...*
+2. *Objects -> Manipulate -> To Manipulation...*
 	* Leave *Time Step* unchanged
 	* Set the pitch range to 75-600 Hz
 3. Select the newly created “Manipulation (Soundname)”, then *Objects -> View & Edit*
@@ -887,7 +887,7 @@ This will open a manipulation window (like the one shown in Figure \ref{manipula
 
 If you still have too many points, select a few (by selecting a part of the sound) and go to *Manipulation -> Pitch -> Remove pitch point(s)*. If you need a different pitch point, place your cursor where you want a point and *Manipulation -> Pitch -> Add pitch point at cursor*.  
 
-You can now drag the individual green pitch points around to raise and lower the speaker’s pitch at different points throughout the word, to great phonetic (and comedic) effect.
+You can now drag the individual blue pitch points around to raise and lower the speaker’s pitch at different points throughout the word, to great phonetic (and comedic) effect.
 
 To save the result of your manipulations, use *Manipulation -> File -> Publish Resynthesis*, and a pitch-modified copy of the sound will be placed in the Objects window to be saved as usual.
 
